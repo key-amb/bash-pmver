@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -euo pipefail
+
+pm=${1:-""}
+if [[ -z $pm ]]; then
+  exec pod2text $0
+fi
+
+path=$(perldoc -ml $pm)
+if [[ -z $path || ! -f $path ]]; then
+  return
+fi
+
+exec perl -M$pm -e "print \$${pm}::VERSION . qq(\n)"
+
+exit
+
+: <<'__EOF__'
+
+=encoding utf8
+
+=head1 NAME
+
+B<pmver> - Prints perl module's VERSION
+
+=head1 SYNOPSYS
+
+    pmver Foo::Bar
+
+=head1 DESCRIPTION
+
+Prints perl module's VERSION
+
+=head1 AUTHORS
+
+YASUTAKE Kiyoshi E<lt>yasutake.kiyoshi@gmail.comE<gt>
+
+=cut
+
+__EOF__
+
+# vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2 filetype=sh
