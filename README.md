@@ -1,12 +1,14 @@
-# pmver
+# NAME
 
-Prints perl module's version.
+**pmver** - Prints perl module's VERSION
 
 # SYNOPSYS
 
-```
-pmver Foo::Bar
-```
+    pmver Foo::Bar
+
+# DESCRIPTION
+
+Prints perl module's VERSION
 
 # AUTHORS
 
@@ -14,8 +16,6 @@ YASUTAKE Kiyoshi <yasutake.kiyoshi@gmail.com>
 
 # LICENSE
 
-Copyright (C) 2014 YASUTAKE Kiyoshi.
+The MIT License (MIT)
 
-This library is free software; you can redistribute it and/or modify it under
-the same terms as the GNU General Public License or Artistic License.
-
+Copyright (c) 2016 YASUTAKE Kiyoshi

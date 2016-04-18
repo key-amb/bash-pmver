@@ -2,6 +2,13 @@
 
 set -euo pipefail
 
+version="0.9.0"
+
+if [[ ${1:-} = "-v" || ${1:-} = "--version" ]]; then
+  echo $version
+  exit 0
+fi
+
 pm=${1:-""}
 if [[ -z $pm ]]; then
   exec pod2text $0
@@ -35,6 +42,12 @@ Prints perl module's VERSION
 =head1 AUTHORS
 
 YASUTAKE Kiyoshi E<lt>yasutake.kiyoshi@gmail.comE<gt>
+
+=head1 LICENSE
+
+The MIT License (MIT)
+
+Copyright (c) 2016 YASUTAKE Kiyoshi
 
 =cut
 
